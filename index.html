@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Apps - MugShopp</title>
+  <style>
+    /* Cores da marca */
+    :root {
+      --tiffany: #0abab5;
+      --black: #000000;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: var(--white);
+      color: var(--black);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    /* Introdução */
+    .intro {
+      margin-top: 50px;
+    }
+
+    .logo {
+      max-width: 250px;
+      width: 60%;
+      height: auto;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      color: var(--tiffany);
+      margin-top: 15px;
+      opacity: 0;
+      animation: fadeIn 2s forwards 1s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Botões dos apps */
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 50px;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .tab {
+      display: block;
+      padding: 15px;
+      background-color: var(--tiffany);
+      color: var(--white);
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .tab:hover {
+      background-color: #089aa1;
+    }
+
+    /* Responsividade */
+    @media (min-width: 600px) {
+      .tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .tab {
+        flex: 1 1 40%;
+        margin: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="intro">
+    <img class="logo" src="https://i.postimg.cc/Hs4DVWDG/file_00000000b69061f8ae80cb7ce110477f_(1)_(1).png" alt="MugShopp Logo">
+    <div class="subtitle">Gestão Empresarial</div>
+  </div>
+
+  <div class="tabs">
+    <a class="tab" href="https://mugshopp2026.lovable.app/" target="_blank">Gerenciador de Marca</a>
+    <a class="tab" href="https://mugshopp.lovable.app/" target="_blank">Pedidos</a>
+    <a class="tab" href="https://clientespc.lovable.app/" target="_blank">Insights</a>
+    <a class="tab" href="https://comprasms.lovable.app/lista" target="_blank">Gastos</a>
+  </div>
+</body>
+</html>
