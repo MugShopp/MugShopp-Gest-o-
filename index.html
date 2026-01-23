@@ -19,15 +19,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start; /* sobe tudo */
+      justify-content: flex-start;
       min-height: 100vh;
       text-align: center;
       overflow-x: hidden;
-      padding-top: 20px; /* respiro no topo */
+      padding-top: 20px;
     }
 
     .intro {
-      margin-top: 10px; /* mais pra cima */
+      margin-top: 10px;
     }
 
     .logo {
@@ -52,7 +52,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
-      margin-top: 30px; /* mais pra cima */
+      margin-top: 30px;
       width: 80%;
       max-width: 400px;
     }
@@ -71,6 +71,10 @@
     .tab:hover {
       background-color: #089aa1;
       transform: scale(1.03);
+    }
+
+    .private {
+      display: none;
     }
 
     @media (min-width: 600px) {
@@ -93,12 +97,26 @@
   </div>
 
   <div class="tabs">
-    <a class="tab" href="https://mugshopp2026.lovable.app/" target="_blank">Gerenciador de Marca</a>
+    <!-- Públicos -->
     <a class="tab" href="https://drive.google.com/file/d/1xcB0OmNNQRwbzfSu5VwHCDOOF2iP4M3s/view?usp=drivesdk" target="_blank">Apresentação</a>
-    <a class="tab" href="https://propostasms.lovable.app/" target="_blank">Propostas Comerciais</a>
-    <a class="tab" href="https://clientespc.lovable.app/" target="_blank">Insights</a>
-    <a class="tab" href="https://gastosgerais.lovable.app" target="_blank">Gastos</a>
     <a class="tab" href="https://drive.google.com/drive/folders/1LGacFKJqYeTp7Lj9Bj-chqRuF79c4MdB" target="_blank">Tabelas</a>
+
+    <!-- Privados -->
+    <a class="tab private" href="https://mugshopp2026.lovable.app/" target="_blank">Gerenciador de Marca</a>
+    <a class="tab private" href="https://propostasms.lovable.app/" target="_blank">Propostas Comerciais</a>
+    <a class="tab private" href="https://clientespc.lovable.app/" target="_blank">Insights</a>
+    <a class="tab private" href="https://gastosgerais.lovable.app" target="_blank">Gastos</a>
   </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const isAdmin = params.get("admin") === "1";
+
+    if (isAdmin) {
+      document.querySelectorAll(".private").forEach(el => {
+        el.style.display = "block";
+      });
+    }
+  </script>
 </body>
 </html>
