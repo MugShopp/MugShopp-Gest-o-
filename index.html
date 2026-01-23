@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meus Apps - MugShopp</title>
   <style>
-    /* Cores da marca */
     :root {
       --tiffany: #0abab5;
       --black: #000000;
@@ -20,41 +19,40 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start; /* sobe tudo */
       min-height: 100vh;
       text-align: center;
       overflow-x: hidden;
+      padding-top: 20px; /* respiro no topo */
     }
 
-    /* Introdução */
     .intro {
-      margin-top: 50px;
+      margin-top: 10px; /* mais pra cima */
     }
 
     .logo {
-      max-width: 250px;
+      max-width: 220px;
       width: 60%;
       height: auto;
     }
 
     .subtitle {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: var(--tiffany);
-      margin-top: 15px;
+      margin-top: 10px;
       opacity: 0;
-      animation: fadeIn 2s forwards 1s;
+      animation: fadeIn 1.5s forwards 0.5s;
     }
 
     @keyframes fadeIn {
       to { opacity: 1; }
     }
 
-    /* Botões dos apps */
     .tabs {
       display: flex;
       flex-direction: column;
       gap: 15px;
-      margin-top: 50px;
+      margin-top: 30px; /* mais pra cima */
       width: 80%;
       max-width: 400px;
     }
@@ -67,14 +65,14 @@
       font-weight: bold;
       text-decoration: none;
       border-radius: 10px;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s, transform 0.2s;
     }
 
     .tab:hover {
       background-color: #089aa1;
+      transform: scale(1.03);
     }
 
-    /* Responsividade */
     @media (min-width: 600px) {
       .tabs {
         flex-direction: row;
@@ -100,6 +98,7 @@
     <a class="tab" href="https://propostasms.lovable.app/" target="_blank">Propostas Comerciais</a>
     <a class="tab" href="https://clientespc.lovable.app/" target="_blank">Insights</a>
     <a class="tab" href="https://gastosgerais.lovable.app" target="_blank">Gastos</a>
+    <a class="tab" href="https://drive.google.com/drive/folders/1LGacFKJqYeTp7Lj9Bj-chqRuF79c4MdB" target="_blank">Tabelas</a>
   </div>
 </body>
 </html>
