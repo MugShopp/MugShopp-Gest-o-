@@ -73,7 +73,7 @@
       transform: scale(1.03);
     }
 
-    .private {
+    .hidden {
       display: none;
     }
 
@@ -97,25 +97,33 @@
   </div>
 
   <div class="tabs">
-    <!-- Públicos -->
-    <a class="tab" href="https://drive.google.com/file/d/1xcB0OmNNQRwbzfSu5VwHCDOOF2iP4M3s/view?usp=drivesdk" target="_blank">Apresentação</a>
-    <a class="tab" href="https://drive.google.com/drive/folders/1LGacFKJqYeTp7Lj9Bj-chqRuF79c4MdB" target="_blank">Tabelas</a>
-
-    <!-- Privados -->
-    <a class="tab private" href="https://mugshopp2026.lovable.app/" target="_blank">Gerenciador de Marca</a>
-    <a class="tab private" href="https://propostasms.lovable.app/" target="_blank">Propostas Comerciais</a>
-    <a class="tab private" href="https://insightsms.lovable.app/" target="_blank">Insights</a>
-    <a class="tab private" href="https://gastosgerais.lovable.app" target="_blank">Gastos</a>
+    <!-- Todos os botões -->
+    <a class="tab hidden" id="apresentacao" href="https://drive.google.com/file/d/1xcB0OmNNQRwbzfSu5VwHCDOOF2iP4M3s/view?usp=drivesdk" target="_blank">Apresentação</a>
+    <a class="tab hidden" id="tabelas" href="https://drive.google.com/drive/folders/1LGacFKJqYeTp7Lj9Bj-chqRuF79c4MdB" target="_blank">Tabelas</a>
+    <a class="tab hidden" id="portfolio" href="https://portifolioms.lovable.app/" target="_blank">Portfólio MugShopp</a>
+    <a class="tab hidden" id="gerenciador" href="https://mugshopp2026.lovable.app/" target="_blank">Gerenciador de Marca</a>
+    <a class="tab hidden" id="propostas" href="https://propostasms.lovable.app/" target="_blank">Propostas Comerciais</a>
+    <a class="tab hidden" id="insights" href="https://insightsms.lovable.app/" target="_blank">Insights</a>
+    <a class="tab hidden" id="gastos" href="https://gastosgerais.lovable.app" target="_blank">Gastos</a>
+    <a class="tab hidden" id="propostas-copia" href="https://propostasm.lovable.app/" target="_blank">Propostas Comerciais (Cópia)</a>
   </div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
     const isAdmin = params.get("admin") === "1";
+    const isUser = params.get("user") === "1";
 
-    if (isAdmin) {
-      document.querySelectorAll(".private").forEach(el => {
-        el.style.display = "block";
-      });
+    if(isAdmin){
+      // Administradora vê todos os botões
+      document.querySelectorAll(".tab").forEach(el => el.classList.remove("hidden"));
+    }
+
+    if(isUser){
+      // Sobrinha vê apenas Apresentação, Tabelas, Portfólio e Propostas Copia
+      document.getElementById("apresentacao").classList.remove("hidden");
+      document.getElementById("tabelas").classList.remove("hidden");
+      document.getElementById("portfolio").classList.remove("hidden");
+      document.getElementById("propostas-copia").classList.remove("hidden");
     }
   </script>
 </body>
