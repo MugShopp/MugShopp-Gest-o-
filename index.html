@@ -107,8 +107,6 @@
     <a class="tab hidden" id="gastos" href="https://gastosgerais.lovable.app" target="_blank">Gastos</a>
     <a class="tab hidden" id="propostas-copia" href="https://propostasm.lovable.app/" target="_blank">Propostas Comerciais (Cópia)</a>
     <a class="tab hidden" id="calculadora" href="https://mugshopp.github.io/Produ-o-/" target="_blank">Calculadora de Produção</a>
-
-    <!-- NOVO BOTÃO: Painel de Pedidos -->
     <a class="tab hidden" id="painel-pedidos" href="https://mugshopp.github.io/Agendams/" target="_blank">Painel de Pedidos</a>
   </div>
 
@@ -118,18 +116,19 @@
     const isUser = params.get("user") === "1";
 
     if(isAdmin){
-      // Administradora vê todos os botões
+      // Admin vê tudo EXCETO Propostas Cópia
       document.querySelectorAll(".tab").forEach(el => el.classList.remove("hidden"));
+      document.getElementById("propostas-copia").classList.add("hidden");
     }
 
     if(isUser){
-      // Sobrinha vê apenas os botões permitidos
+      // User vê apenas os botões permitidos
       document.getElementById("apresentacao").classList.remove("hidden");
       document.getElementById("tabelas").classList.remove("hidden");
       document.getElementById("portfolio").classList.remove("hidden");
       document.getElementById("propostas-copia").classList.remove("hidden");
-      document.getElementById("calculadora").classList.remove("hidden");
       document.getElementById("painel-pedidos").classList.remove("hidden");
+      // Calculadora NÃO aparece para o user
     }
   </script>
 </body>
