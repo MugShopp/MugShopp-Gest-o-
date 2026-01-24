@@ -97,7 +97,7 @@
   </div>
 
   <div class="tabs">
-    <!-- Todos os botões -->
+    <!-- Botões -->
     <a class="tab hidden" id="apresentacao" href="https://drive.google.com/file/d/1xcB0OmNNQRwbzfSu5VwHCDOOF2iP4M3s/view?usp=drivesdk" target="_blank">Apresentação</a>
     <a class="tab hidden" id="tabelas" href="https://drive.google.com/drive/folders/1LGacFKJqYeTp7Lj9Bj-chqRuF79c4MdB" target="_blank">Tabelas</a>
     <a class="tab hidden" id="portfolio" href="https://portifolioms.lovable.app/" target="_blank">Portfólio MugShopp</a>
@@ -106,8 +106,10 @@
     <a class="tab hidden" id="insights" href="https://insightsms.lovable.app/" target="_blank">Insights</a>
     <a class="tab hidden" id="gastos" href="https://gastosgerais.lovable.app" target="_blank">Gastos</a>
     <a class="tab hidden" id="propostas-copia" href="https://propostasm.lovable.app/" target="_blank">Propostas Comerciais (Cópia)</a>
-    <!-- NOVO BOTÃO: Calculadora -->
     <a class="tab hidden" id="calculadora" href="https://mugshopp.github.io/Produ-o-/" target="_blank">Calculadora de Produção</a>
+
+    <!-- NOVO BOTÃO: Painel de Pedidos -->
+    <a class="tab hidden" id="painel-pedidos" href="https://mugshopp.github.io/Agendams/" target="_blank">Painel de Pedidos</a>
   </div>
 
   <script>
@@ -121,12 +123,13 @@
     }
 
     if(isUser){
-      // Sobrinha vê apenas Apresentação, Tabelas, Portfólio, Propostas Copia e Calculadora
+      // Sobrinha vê apenas os botões permitidos
       document.getElementById("apresentacao").classList.remove("hidden");
       document.getElementById("tabelas").classList.remove("hidden");
       document.getElementById("portfolio").classList.remove("hidden");
       document.getElementById("propostas-copia").classList.remove("hidden");
       document.getElementById("calculadora").classList.remove("hidden");
+      document.getElementById("painel-pedidos").classList.remove("hidden");
     }
   </script>
 </body>
