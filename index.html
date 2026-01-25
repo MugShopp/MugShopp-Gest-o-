@@ -4,16 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meus Apps - MugShopp</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --tiffany: #0abab5;
-      --black: #000000;
+      --champagne: #C5A059; /* Sua nova cor de destaque */
+      --black: #1a1a1a;
       --white: #ffffff;
+      --bg-light: #fafafa;
     }
 
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: var(--white);
       color: var(--black);
       display: flex;
@@ -23,54 +27,73 @@
       min-height: 100vh;
       text-align: center;
       overflow-x: hidden;
-      padding-top: 20px;
+      padding-top: 40px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .intro {
-      margin-top: 10px;
+    /* ESTILO DO NOVO LOGOTIPO */
+    .brand-logo {
+      margin-bottom: 10px;
     }
-
-    .logo {
-      max-width: 220px;
-      width: 60%;
-      height: auto;
+    .brand-logo h1 {
+      font-weight: 600;
+      font-size: 28px;
+      letter-spacing: 10px;
+      margin: 0;
+      text-transform: uppercase;
+      color: var(--black);
     }
+    .brand-logo .shopp-gold { color: var(--champagne); }
 
     .subtitle {
-      font-size: 1.4rem;
-      color: var(--tiffany);
-      margin-top: 10px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--black);
+      font-weight: 400;
+      margin-top: 5px;
       opacity: 0;
       animation: fadeIn 1.5s forwards 0.5s;
     }
 
     @keyframes fadeIn {
-      to { opacity: 1; }
+      to { opacity: 0.7; }
     }
 
     .tabs {
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      margin-top: 30px;
-      width: 80%;
-      max-width: 400px;
+      gap: 12px;
+      margin-top: 40px;
+      width: 85%;
+      max-width: 450px;
     }
 
     .tab {
       display: block;
-      padding: 15px;
-      background-color: var(--tiffany);
+      padding: 16px;
+      background-color: var(--black);
       color: var(--white);
-      font-weight: bold;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
       text-decoration: none;
-      border-radius: 10px;
-      transition: background-color 0.3s, transform 0.2s;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      border: 1px solid var(--black);
     }
 
     .tab:hover {
-      background-color: #089aa1;
-      transform: scale(1.03);
+      background-color: var(--white);
+      color: var(--black);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Botão de destaque para áreas críticas (opcional, mudei a borda para champagne) */
+    .tab#gerenciador, .tab#insights {
+      border-color: var(--champagne);
     }
 
     .hidden {
@@ -84,29 +107,29 @@
         justify-content: center;
       }
       .tab {
-        flex: 1 1 40%;
-        margin: 5px;
+        flex: 1 1 45%;
       }
     }
   </style>
 </head>
 <body>
   <div class="intro">
-    <img class="logo" src="https://i.postimg.cc/Hs4DVWDG/file_00000000b69061f8ae80cb7ce110477f_(1)_(1).png" alt="MugShopp Logo">
+    <div class="brand-logo">
+      <h1>MUG<span class="shopp-gold">SHOPP</span></h1>
+    </div>
     <div class="subtitle">Gestão Empresarial</div>
   </div>
 
   <div class="tabs">
-    <!-- Botões -->
     <a class="tab hidden" id="apresentacao" href="https://mugshopp.github.io/Apresentar-/" target="_blank">Apresentação</a>
     <a class="tab hidden" id="tabelas" href="https://drive.google.com/drive/folders/1LGacFKJqYeTp7Lj9Bj-chqRuF79c4MdB" target="_blank">Tabelas</a>
-    <a class="tab hidden" id="portfolio" href="https://mugshopp.github.io/portifolio/" target="_blank">Portfólio MugShopp</a>
-    <a class="tab hidden" id="gerenciador" href="https://mugshopp2026.lovable.app/" target="_blank">Gerenciador de Marca</a>
-    <a class="tab hidden" id="propostas" href="https://propostasms.lovable.app/" target="_blank">Propostas Comerciais</a>
+    <a class="tab hidden" id="portfolio" href="https://mugshopp.github.io/portifolio/" target="_blank">Portfólio</a>
+    <a class="tab hidden" id="gerenciador" href="https://mugshopp2026.lovable.app/" target="_blank">Gerenciador</a>
+    <a class="tab hidden" id="propostas" href="https://propostasms.lovable.app/" target="_blank">Propostas</a>
     <a class="tab hidden" id="insights" href="https://insightsms.lovable.app/" target="_blank">Insights</a>
     <a class="tab hidden" id="gastos" href="https://gastosgerais.lovable.app" target="_blank">Gastos</a>
-    <a class="tab hidden" id="propostas-copia" href="https://propostasm.lovable.app/" target="_blank">Propostas Comerciais (Cópia)</a>
-    <a class="tab hidden" id="calculadora" href="https://mugshopp.github.io/Produ-o-/" target="_blank">Calculadora de Produção</a>
+    <a class="tab hidden" id="propostas-copia" href="https://propostasm.lovable.app/" target="_blank">Propostas (Cópia)</a>
+    <a class="tab hidden" id="calculadora" href="https://mugshopp.github.io/Produ-o-/" target="_blank">Calculadora</a>
     <a class="tab hidden" id="painel-pedidos" href="https://mugshopp.github.io/Agendams/" target="_blank">Painel de Pedidos</a>
   </div>
 
@@ -116,19 +139,16 @@
     const isUser = params.get("user") === "1";
 
     if(isAdmin){
-      // Admin vê tudo EXCETO Propostas Cópia
       document.querySelectorAll(".tab").forEach(el => el.classList.remove("hidden"));
       document.getElementById("propostas-copia").classList.add("hidden");
     }
 
     if(isUser){
-      // User vê apenas os botões permitidos
       document.getElementById("apresentacao").classList.remove("hidden");
       document.getElementById("tabelas").classList.remove("hidden");
       document.getElementById("portfolio").classList.remove("hidden");
       document.getElementById("propostas-copia").classList.remove("hidden");
       document.getElementById("painel-pedidos").classList.remove("hidden");
-      // Calculadora NÃO aparece para o user
     }
   </script>
 </body>
